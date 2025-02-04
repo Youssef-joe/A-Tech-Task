@@ -1,64 +1,127 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-container {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 892px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  background: #F69054;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-title {
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+    }
   }
-  
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
   .modal-container {
-    background: white;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 892px;
-    max-height: 90vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    max-width: 95%; /* Allow modal to take more width on smaller screens */
+    max-height: 95vh; /* Adjust max height for smaller screens */
   }
-  
+
   .modal-header {
-    background: #F69054;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
+    padding: 16px; /* Reduce header padding */
+
     .header-title {
       h1 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 20px; /* Reduce heading font size */
       }
-      
+
       .subtitle {
-        font-size: 14px;
-        opacity: 0.8;
+        font-size: 12px; /* Reduce subtitle font size */
       }
     }
   }
-  
+
   .close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 4px;
+    font-size: 20px; /* Reduce close button size */
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 5px; /* Further reduce padding for very small screens */
+  }
+
+  .modal-container {
+    max-width: 100%; /* Allow modal to take full width on very small screens */
+    max-height: 98vh; /* Further adjust max height */
+  }
+
+  .modal-header {
+    padding: 12px; /* Further reduce header padding */
+
+    .header-title {
+      h1 {
+        font-size: 18px; /* Further reduce heading font size */
+      }
+
+      .subtitle {
+        font-size: 11px; /* Further reduce subtitle font size */
+      }
     }
   }
+
+  .close-btn {
+    font-size: 18px; /* Further reduce close button size */
+    width: 24px;
+    height: 24px;
+  }
+}

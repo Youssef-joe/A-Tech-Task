@@ -6,7 +6,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px; 
+  min-width: 800px; /* Ensure the table has a minimum width */
 }
 
 th {
@@ -68,5 +68,48 @@ tr:hover {
   span {
     color: #666;
     font-size: 14px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 10px;
+  }
+
+  table {
+    min-width: 100%; /* Allow the table to shrink on smaller screens */
+  }
+
+  th, td {
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+
+  td.truncate {
+    max-width: 150px; /* Adjust truncation width for smaller screens */
+  }
+
+  .pagination {
+    flex-direction: column; /* Stack pagination buttons vertically */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    padding: 6px; /* Further reduce padding for very small screens */
+  }
+
+  td.truncate {
+    max-width: 100px; /* Further adjust truncation width */
+  }
+
+  .pagination button {
+    padding: 6px 12px; /* Adjust button padding for smaller screens */
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+
+  .pagination span {
+    font-size: 12px; /* Reduce font size for smaller screens */
   }
 }

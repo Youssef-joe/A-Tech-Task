@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClipboardService } from '../../services/clipboard.service';
 import { NumberDetails } from '../../models/number.model';
+import { SpeedDialModule } from 'primeng/speeddial';
 
 @Component({
   selector: 'app-number-details',
