@@ -1,0 +1,21 @@
+.creator-container {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.creator-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+
+  .name {
+    font-weight: 500;
+  }
+
+  .date {
+    color: #999;
+  }
+}

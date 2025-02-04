@@ -1,0 +1,43 @@
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>{{ isRTL ? 'التفاصيل' : 'Details' }}</th>
+        <th>{{ isRTL ? 'المبلغ' : 'Amount' }}</th>
+        <th>{{ isRTL ? 'الكمية' : 'Quantity' }}</th>
+        <th>{{ isRTL ? 'الإجمالي' : 'Total' }}</th>
+        <th>{{ isRTL ? 'تاريخ البداية' : 'Start Date' }}</th>
+        <th>{{ isRTL ? 'تاريخ النهاية' : 'End Date' }}</th>
+        <th>{{ isRTL ? 'الشركة' : 'Company' }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td class="truncate" [title]="transaction.description">
+          {{ transaction.description }}
+        </td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.quantity }}</td>
+        <td>{{ transaction.total }}</td>
+        <td>{{ transaction.startDate }}</td>
+        <td>{{ transaction.endDate }}</td>
+        <td class="truncate" [title]="transaction.company">
+          {{ transaction.company }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="pagination">
+    <button 
+      [disabled]="currentPage === 1"
+      (click)="changePage(currentPage - 1)">
+      {{ isRTL ? 'السابق' : 'Previous' }}
+    </button>
+    <span>{{ currentPage }}</span>
+    <button (click)="changePage(currentPage + 1)">
+      {{ isRTL ? 'التالي' : 'Next' }}
+    </button>
+  </div>
+</div>

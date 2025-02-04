@@ -1,0 +1,29 @@
+<div class="modal-overlay" (click)="onOverlayClick($event)">
+    <div class="modal-container" [dir]="isRTL ? 'rtl' : 'ltr'">
+      <div class="modal-header">
+        <div class="header-title">
+          <h1>{{ isRTL ? 'عرض الرقم' : 'View Number' }}</h1>
+          <span class="subtitle">{{ isRTL ? 'شاشة متعددة اللغات' : 'Multi language screen' }} EN-AR</span>
+        </div>
+        <button class="close-btn" (click)="closeModal()">×</button>
+      </div>
+      
+      <app-number-details 
+        [details]="numberDetails" 
+        [isRTL]="isRTL"
+        (numberCopied)="onNumberCopied($event)">
+      </app-number-details>
+      
+      <app-transactions-table 
+        [transactions]="transactions" 
+        [isRTL]="isRTL"
+        (pageChange)="onPageChange($event)">
+      </app-transactions-table>
+      
+      <app-creator-info 
+        [creatorName]="creatorName" 
+        [creationDate]="creationDate"
+        [isRTL]="isRTL">
+      </app-creator-info>
+    </div>
+  </div>
