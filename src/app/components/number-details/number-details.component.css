@@ -1,8 +1,10 @@
-.details-container {
+
+
+.details-container { 
   padding: 20px;
   border-bottom: 1px solid #eee;
-  overflow-y: auto; /* Enables vertical scrolling */
-  max-height: 80vh; /* Limit the height for scrollability */
+  overflow-y: auto;
+  max-height: 80vh; 
 }
 
 .details-header {
@@ -50,19 +52,19 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  overflow-y: auto; /* Ensure the grid scrolls when content overflows */
-  max-height: 500px; /* Set a max-height to enable scrolling */
+  overflow-y: auto; 
+  max-height: 500px;
 }
 
 @media (max-width: 1024px) {
   .details-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .details-grid {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-columns: 1fr; 
   }
 
   .details-header {
@@ -77,27 +79,27 @@
   }
 
   .action-btn {
-    font-size: 12px; /* Smaller button text on smaller screens */
+    font-size: 12px; 
   }
 
   .details-container {
-    max-height: 70vh; /* Adjust the max-height for smaller screens */
+    max-height: 70vh; 
   }
 }
 
 @media (max-width: 480px) {
   .action-btn {
-    padding: 6px 12px; /* Smaller button padding on very small screens */
+    padding: 6px 12px; 
   }
 
   .number {
-    font-size: 16px; /* Adjusted number font size */
+    font-size: 16px;
   }
 }
 
 .detail-item {
   position: relative;
-  overflow: hidden; /* Hide scrollbar for the detail item */
+  overflow: hidden;
 }
 
 label {
@@ -105,7 +107,7 @@ label {
   color: #666;
   margin-bottom: 4px;
   font-size: 14px;
-  overflow: hidden; /* Hide the scroll on the label */
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -187,8 +189,8 @@ span {
 
 .custom-menu {
   position: absolute;
-  top: 100%; /* Keeps the menu below the dots */
-  left: 0; /* Aligns the menu to the left of the dots */
+  top: 100%; 
+  left: 0; 
   background: white;
   border: 1px solid #ddd;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
