@@ -4,18 +4,19 @@ import { NumberDetails, Transaction } from '../../models/number.model';
 import { NumberDetailsComponent } from '../number-details/number-details.component';
 import { TransactionsTableComponent } from '../transactions-table/transactions-table.component';
 import { CreatorInfoComponent } from '../creator-info/creator-info.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-number-parent',
-  standalone: true,
-  imports: [
-    CommonModule,
-    NumberDetailsComponent,
-    TransactionsTableComponent,
-    CreatorInfoComponent,
-  ],
-  templateUrl: './number-parent.component.html',
-  styleUrl: './number-parent.component.css',
+    selector: 'app-number-parent',
+    imports: [
+        CommonModule,
+        NumberDetailsComponent,
+        TransactionsTableComponent,
+        CreatorInfoComponent,
+        RouterModule
+    ],
+    templateUrl: './number-parent.component.html',
+    styleUrl: './number-parent.component.css'
 })
 export class NumberParentComponent {
   @Output() close = new EventEmitter<void>();

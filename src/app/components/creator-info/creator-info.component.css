@@ -1,7 +1,6 @@
 .creator-container {
   padding: 20px;
   border-top: 1px solid #eee;
-  background: #fff;
 }
 
 .creator-info {
@@ -10,12 +9,37 @@
   align-items: center;
   color: #666;
   font-size: 14px;
+}
 
-  .name {
-    font-weight: 500;
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .creator-container {
+    padding: 15px; /* Adjust padding for tablets */
   }
 
-  .date {
-    color: #999;
+  .creator-info {
+    font-size: 12px; /* Smaller text for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .creator-container {
+    padding: 12px; /* Less padding on smaller screens */
+  }
+
+  .creator-info {
+    font-size: 12px; /* Maintain the smaller font size for mobile */
+    flex-direction: column; /* Stack the creator info vertically on mobile */
+    align-items: flex-start; /* Align items to the start for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .creator-container {
+    padding: 10px; /* Minimum padding for very small screens */
+  }
+
+  .creator-info {
+    font-size: 11px; /* Adjust font size further for small screens */
   }
 }

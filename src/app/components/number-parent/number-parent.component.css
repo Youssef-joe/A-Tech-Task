@@ -63,65 +63,79 @@
   }
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .modal-overlay {
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
-
+/* Media Queries */
+@media (max-width: 1024px) {
   .modal-container {
-    max-width: 95%; /* Allow modal to take more width on smaller screens */
-    max-height: 95vh; /* Adjust max height for smaller screens */
+    max-width: 600px; /* Adjust for tablet view */
+    padding: 15px;
   }
 
   .modal-header {
-    padding: 16px; /* Reduce header padding */
+    padding: 15px;
+  }
 
-    .header-title {
-      h1 {
-        font-size: 20px; /* Reduce heading font size */
-      }
+  .header-title h1 {
+    font-size: 20px; /* Adjust title size */
+  }
 
-      .subtitle {
-        font-size: 12px; /* Reduce subtitle font size */
-      }
-    }
+  .header-title .subtitle {
+    font-size: 12px;
   }
 
   .close-btn {
-    font-size: 20px; /* Reduce close button size */
     width: 28px;
     height: 28px;
+    font-size: 20px; /* Adjust close button size */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    max-width: 100%; /* Full width on smaller screens */
+    padding: 10px;
+    max-height: 80vh; /* Adjust max-height */
+  }
+
+  .modal-header {
+    padding: 10px;
+  }
+
+  .header-title h1 {
+    font-size: 18px; /* Smaller title on mobile */
+  }
+
+  .header-title .subtitle {
+    font-size: 12px;
+  }
+
+  .close-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
-  .modal-overlay {
-    padding: 5px; /* Further reduce padding for very small screens */
-  }
-
   .modal-container {
-    max-width: 100%; /* Allow modal to take full width on very small screens */
-    max-height: 98vh; /* Further adjust max height */
+    max-width: 100%; /* Full width on very small screens */
+    max-height: 75vh; /* Adjust max height */
   }
 
   .modal-header {
-    padding: 12px; /* Further reduce header padding */
+    padding: 8px;
+  }
 
-    .header-title {
-      h1 {
-        font-size: 18px; /* Further reduce heading font size */
-      }
+  .header-title h1 {
+    font-size: 16px; /* Smaller title for very small screens */
+  }
 
-      .subtitle {
-        font-size: 11px; /* Further reduce subtitle font size */
-      }
-    }
+  .header-title .subtitle {
+    font-size: 12px;
   }
 
   .close-btn {
-    font-size: 18px; /* Further reduce close button size */
     width: 24px;
     height: 24px;
+    font-size: 16px; /* Smaller close button */
   }
 }

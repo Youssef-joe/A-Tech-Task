@@ -1,34 +1,45 @@
 <div class="details-container">
-    <div class="details-header">
-      <div class="number-display">
-        <span class="number">{{ details.id }}</span>
-        <button class="action-btn" (click)="copyNumber()">
-          {{ isRTL ? 'نسخ الرقم' : 'Copy Number' }}
-        </button>
-      </div>
-      <div class="status-badge">{{ details.status }}</div>
+  <div class="details-header">
+    <div class="number-display">
+      <span class="number">{{ details.id }}</span>
+      <button class="action-btn" (click)="copyNumber()">
+        {{ isRTL ? "قيد الاستخدام" : "Copy Number" }}
+      </button>
     </div>
-    
-    <div class="details-grid">
-      <div class="detail-item">
-        <label>{{ isRTL ? 'اسم البروتوكول' : 'Protocol Name' }}</label>
-        <span class="truncate" [title]="details.name">{{ details.name }}</span>
-      </div>
-      <div class="detail-item">
-        <label>{{ isRTL ? 'الدولة' : 'Country' }}</label>
-        <span class="truncate" [title]="details.country">{{ details.country }}</span>
-      </div>
-      <div class="detail-item">
-        <label>{{ isRTL ? 'الرصيد الحالي' : 'Current Balance' }}</label>
-        <span>{{ details.currentBalance }} {{ isRTL ? 'د.ح' : 'CR' }}</span>
-      </div>
-      <div class="detail-item">
-        <label>{{ isRTL ? 'الرصيد المتاح' : 'Available Balance' }}</label>
-        <span>{{ details.availableBalance }} {{ isRTL ? 'د.ح' : 'CR' }}</span>
-      </div>
-      <div class="detail-item">
-        <label>{{ isRTL ? 'الرصيد المستخدم' : 'Used Balance' }}</label>
-        <span>{{ details.usedBalance }} {{ isRTL ? 'د.ح' : 'CR' }}</span>
+    <div class="status-badge">{{ details.status }}</div>
+    <div class="menu-item">
+      <div class="relative">
+        <span class="dots-menu" (click)="toggleMenu()">⋮</span>
+        <div *ngIf="menuOpen" class="custom-menu">
+          <button class="edit" (click)="onEdit() ">تعديل</button>
+          <button class="delete" (click)="onDelete()">حذف</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="details-grid">
+    <div class="detail-item">
+      <label>{{ isRTL ? "اسم البروتوكول" : "Protocol Name" }}</label>
+      <span class="truncate" [title]="details.name">{{ details.name }}</span>
+    </div>
+    <div class="detail-item">
+      <label>{{ isRTL ? "الدولة" : "Country" }}</label>
+      <span class="truncate" [title]="details.country">{{
+        details.country
+      }}</span>
+    </div>
+    <div class="detail-item">
+      <label>{{ isRTL ? "الرصيد الحالي" : "Current Balance" }}</label>
+      <span>{{ details.currentBalance }} {{ isRTL ? "د.ح" : "CR" }}</span>
+    </div>
+    <div class="detail-item">
+      <label>{{ isRTL ? "الرصيد المتاح" : "Available Balance" }}</label>
+      <span>{{ details.availableBalance }} {{ isRTL ? "د.ح" : "CR" }}</span>
+    </div>
+    <div class="detail-item">
+      <label>{{ isRTL ? "الرصيد المستخدم" : "Used Balance" }}</label>
+      <span>{{ details.usedBalance }} {{ isRTL ? "د.ح" : "CR" }}</span>
+    </div>
+  </div>
+</div>

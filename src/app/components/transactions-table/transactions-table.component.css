@@ -1,12 +1,14 @@
 .table-container {
   padding: 20px;
   overflow-x: auto;
+  overflow-y: auto; /* Ensure vertical scroll if content exceeds the container */
+  max-height: 70vh; /* Add max-height to control height on mobile */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px; /* Ensure the table has a minimum width */
+  min-width: 800px; /* Ensure the table remains wide enough */
 }
 
 th {
@@ -71,45 +73,57 @@ tr:hover {
   }
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Media Queries */
+@media (max-width: 1024px) {
   .table-container {
-    padding: 10px;
+    max-height: 60vh; /* Adjust max height for tablet screens */
   }
 
   table {
-    min-width: 100%; /* Allow the table to shrink on smaller screens */
+    min-width: 600px; /* Decrease min-width for smaller screens */
   }
 
   th, td {
-    padding: 8px; /* Reduce padding for smaller screens */
-  }
-
-  td.truncate {
-    max-width: 150px; /* Adjust truncation width for smaller screens */
+    padding: 8px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Smaller font size for mobile */
   }
 
   .pagination {
-    flex-direction: column; /* Stack pagination buttons vertically */
+    flex-direction: column; /* Stack pagination buttons on smaller screens */
     gap: 10px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .table-container {
+    max-height: 50vh; /* Adjust max height for mobile */
+  }
+
+  table {
+    min-width: 100%; /* Allow table to take full width */
+  }
+
   th, td {
-    padding: 6px; /* Further reduce padding for very small screens */
+    padding: 6px; /* Further reduce padding */
+    font-size: 11px; /* Further reduce font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .table-container {
+    max-height: 40vh; /* Adjust max height for very small screens */
   }
 
-  td.truncate {
-    max-width: 100px; /* Further adjust truncation width */
+  table {
+    min-width: 100%; /* Ensure the table uses the full width */
   }
 
-  .pagination button {
-    padding: 6px 12px; /* Adjust button padding for smaller screens */
-    font-size: 12px; /* Reduce font size for smaller screens */
+  th, td {
+    padding: 5px; /* Even smaller padding */
+    font-size: 10px; /* Smaller font size for very small screens */
   }
 
-  .pagination span {
-    font-size: 12px; /* Reduce font size for smaller screens */
+  .pagination {
+    font-size: 12px; /* Adjust pagination font size for small screens */
   }
 }

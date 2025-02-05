@@ -1,4 +1,4 @@
-
+// transactions-table.component.ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Transaction } from '../../models/number.model';
@@ -8,7 +8,7 @@ import { Transaction } from '../../models/number.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './transactions-table.component.html',
-  styleUrls: ['./transactions-table.component.scss']
+  styleUrls: ['./transactions-table.component.css']
 })
 export class TransactionsTableComponent {
   @Input() transactions: Transaction[] = [];
